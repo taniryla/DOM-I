@@ -46,12 +46,22 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 
-const navEl1 = document.querySelectorAll('nav');
-navEl1.href = siteContent["nav"]["nav-item-1"];
+const navBar = document.querySelectorAll('.container a');
+navBar[0].href = siteContent["nav"]["nav-item-1"];
+navBar[1].href = siteContent["nav"]["nav-item-2"];
+navBar[2].href = siteContent["nav"]["nav-item-3"];
+navBar[3].href = siteContent["nav"]["nav-item-4"];
+navBar[4].href = siteContent["nav"]["nav-item-5"];
+navBar[5].href = siteContent["nav"]["nav-item-6"];
+
+
+// Nav color change
+
+// navBar.style.color = 'green'; 
 
 // Top Section
 
-const ctaImg = document.querySelector('.cta img');
+const ctaImg = document.querySelector('#cta-img');
 ctaImg.src = './img/header-img.png';
 
 const headline = document.querySelector('.cta-text h1');
@@ -60,37 +70,62 @@ headline.textContent = 'DOM IS AWESOME';
 const buttonName = document.querySelector('.cta-text button');
 buttonName.textContent = 'Get Started';
 
+// New Elements
+
+const newH2 = document.createElement('h2');
+const newP = document.createElement('p');
+newH2.textContent = 'DOM is fun';
+newP.textContent = 'Lets not use innerHTML in our code';
+document.querySelector('.main-content').prepend(newH2);
+document.querySelector('.main-content').appendChild(newP);
+
+
 
 // Above the Mid-Photo Content
 
-const textContentEl = document.querySelector('.text-content h4:nth-child(1)');
-textContentEl.textContent = 'Features';
+const topContentH4 = document.querySelectorAll('.top-content h4');
+topContentH4[0].textContent = siteContent["main-content"]["features-h4"];
+topContentH4[1].textContent = siteContent["main-content"]["about-h4"];
 
 
-const writtenContent = document.querySelector('.text-content p');
-writtenContent.textContent = 'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
+const topContentP = document.querySelectorAll('.top-content p');
+topContentP[0].textContent = siteContent["main-content"]["features-content"];;
+topContentP[1].textContent = siteContent["main-content"]["about-content"];;
 
 const topContent = document.querySelector('.top-content');
-topContent.style.display = 'flex';
-topContent.style.flexWrap = 'wrap';
-topContent.style.width = '100%';
+// topContent.style.display = 'flex';
+// topContent.style.flexWrap = 'wrap';
+// topContent.style.width = '100%';
 
-// const secondContent = document.querySelector('.text-content h4:nth-child(2)');
-// secondContent.textContent = 'About';
+
+
 
 // Below the Mid-Photo Content 
 
-const middleImg = document.querySelector('.main-content img');
-middleImg.src = './img/mid-page-accent.jpg';
+const middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent["main-content"]["middle-img-src"]; // './img/mid-page-accent.jpg';
 
-// const thirdContent = document.querySelector('.text-content h4:nth-child(3)');
-// thirdContent.textContent = 'Services';
+
+const bottomContentH4 = document.querySelectorAll('.bottom-content h4');
+bottomContentH4[0].textContent = siteContent["main-content"]["services-h4"];
+bottomContentH4[1].textContent = siteContent["main-content"]["product-h4"];
+bottomContentH4[2].textContent = siteContent["main-content"]["vision-h4"];
+
+
+const bottomContentP = document.querySelectorAll('.bottom-content p');
+bottomContentP[0].textContent = siteContent["main-content"]["services-content"];;
+bottomContentP[1].textContent = siteContent["main-content"]["product-content"];;
+bottomContentP[2].textContent = siteContent["main-content"]["vision-content"];;
 
 
 // Contact Section 
 
 const contactInfo = document.querySelector('.contact');
 contactInfo.setAttribute('h4', siteContent["contact"]["contact-h4"]);
-contactInfo.setAttribute('p:nth-child(1)', siteContent["contact"]["address"]);
-contactInfo.setAttribute('p:nth-child(2)', siteContent["contact"]["phone"]);
-contactInfo.setAttribute('p:nth-child(3)', siteContent["contact"]["email"]);
+// contactInfo.setAttribute('p:nth-child(1)', siteContent["contact"]["address"]);
+// contactInfo.setAttribute('p:nth-child(2)', siteContent["contact"]["phone"]);
+// contactInfo.setAttribute('p:nth-child(3)', siteContent["contact"]["email"]);
+
+// Footer Section
+const copywriteInfo = document.querySelector('footer p');
+copywriteInfo.textContent = siteContent["footer"]["copyright"];
